@@ -23,3 +23,9 @@ CREATE TABLE courses(
     credits INT
 )
 
+-- Create an "enrollment" table with the following fields:
+CREATE TABLE enrollment(
+    enrollment_id SERIAL PRIMARY KEY,
+    student_id INT REFERENCES students(student_id),
+    course_id INT REFERENCES courses(course_id)
+)
