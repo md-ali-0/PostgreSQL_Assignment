@@ -15,3 +15,11 @@ CREATE TABLE students(
     backend_mark INT,
     status VARCHAR(20)
 )
+
+-- Create a "courses" table with the following fields:
+CREATE TABLE courses(
+    course_id SERIAL PRIMARY KEY,
+    course_name VARCHAR(50),
+    credits INT
+)
+
