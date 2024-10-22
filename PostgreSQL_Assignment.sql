@@ -45,3 +45,10 @@ INSERT INTO courses(course_name, credits)
             ('React.js', 4),
             ('Databases', 3),
             ('Prisma', 3);
+
+-- Insert the following sample data into the "enrollment" table:
+INSERT INTO enrollment (student_id, course_id)
+    VALUES (1, 1),
+            (1, 2),
+            (2, 1),
+            (3, 2);
