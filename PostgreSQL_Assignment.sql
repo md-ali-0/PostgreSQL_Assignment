@@ -2,3 +2,16 @@
 
 -- 1. Database Setup
 CREATE DATABASE university_db
+
+-- 2. Table Creation:
+
+-- Create a "students" table with the following fields:
+CREATE TABLE students(
+    student_id SERIAL PRIMARY KEY,
+    student_name VARCHAR(50),
+    age INT,
+    email VARCHAR(250) UNIQUE NOT NULL,
+    frontend_mark INT,
+    backend_mark INT,
+    status VARCHAR(20)
+)
