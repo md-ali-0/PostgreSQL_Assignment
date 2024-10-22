@@ -59,3 +59,12 @@ INSERT INTO enrollment (student_id, course_id)
 -- Insert a new student record with the following details:
 INSERT INTO students (student_name, age, email, frontend_mark, backend_mark, status)
     VALUES ('Ali', 27, 'ali@mail.com', 100, 100, NULL)
+
+-- Query 2:
+-- Retrieve the names of all students who are enrolled in the course titled 'Next.js'.
+
+SELECT student_name FROM students s
+JOIN enrollment e ON s.student_id = e.student_id
+JOIN courses c ON e.course_id = c.course_id
+WHERE c.course_name = 'Next.js'
+
