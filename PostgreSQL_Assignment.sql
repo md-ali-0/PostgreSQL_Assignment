@@ -63,7 +63,7 @@ INSERT INTO students (student_name, age, email, frontend_mark, backend_mark, sta
 -- Query 2:
 -- Retrieve the names of all students who are enrolled in the course titled 'Next.js'.
 
-SELECT student_name FROM students s
+SELECT s.student_name FROM students s
 JOIN enrollment e ON s.student_id = e.student_id
 JOIN courses c ON e.course_id = c.course_id
 WHERE c.course_name = 'Next.js'
@@ -86,12 +86,12 @@ SELECT student_name FROM students LIMIT 2 OFFSET 2
 -- Query 6:
 -- Retrieve the course names and the number of students enrolled in each course.
 SELECT c.course_name, COUNT(e.student_id) AS students_enrolled FROM courses c
-JOIN enrollment e ON e.course_id = c.course_id
+LEFT JOIN enrollment e ON e.course_id = c.course_id
 GROUP BY c.course_name
 
 -- Query 7:
 -- Calculate and display the average age of all students.
-SELECT AVG(age) AS average_age FROM students;
+SELECT ROUND(AVG(age), 2) AS average_age FROM students;
 
 -- Query 8:
 -- Retrieve the names of students whose email addresses contain 'example.com'.
